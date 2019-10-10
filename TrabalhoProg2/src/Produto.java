@@ -6,12 +6,12 @@ public class Produto {
 	protected String nome;
 	protected double preco;
 	protected String apelido;
-	protected int contunidades;//contador de unidades existentes do produto - Felipe
+	protected int contUnidades;//contador de unidades existentes do produto - Felipe
 	protected boolean perecivel;
 	
 	public Produto(int cod, String nome, double preco,boolean perecivel){
 		
-	    this.contunidades = 1;
+	    this.contUnidades = 1;
 		this.cod = cod;
 		this.nome = nome;
 		this.preco = preco;
@@ -21,29 +21,29 @@ public class Produto {
 	}
 	// Metodo para adicionar uma quatidade especifica passada por paramêtro - Felipe
 	public void addProduto(int qnt) {
-		if(this.contunidades < 30 && (this.contunidades + qnt)<=30) {
+		if(this.contUnidades < 30 && (this.contUnidades + qnt)<=30) {
 			setContUnidades(qnt);
 		}else
 			System.out.println("Espaço insuficiente");
 	}
 	//Metodo que adiciona de uma unidade - Felipe
 	public void addProduto() {
-		if(this.contunidades < 30) {
-			this.contunidades++;
+		if(this.contUnidades < 30) {
+			this.contUnidades++;
 		}
 	}
 	//Remove produtos por quantidade especifica - Felipe
 	public void removeProduto(int qnt) {
-		if( (this.contunidades - qnt)>=0) {
-			setContUnidades((this.contunidades - qnt));
+		if( (this.contUnidades - qnt)>=0) {
+			setContUnidades((this.contUnidades - qnt));
 		}
 	}
 	//Decrementa produto de 1 em 1 - Felipe
 	public void removeProduto() {
-		if(this.contunidades > 0) {
-			this.contunidades--;
+		if(this.contUnidades > 0) {
+			this.contUnidades--;
 		}
-		if(this.contunidades <= 1)
+		if(this.contUnidades <= 1)
 			System.out.println("ALERTA - ESTOQUE ESCAÇO");
 	}
 	//Verifica se os produtos são iguais atraves do codigo e nome do produto - Felipe
@@ -86,11 +86,11 @@ public class Produto {
 	}
 
 	public int getContUnidades() {
-		return contunidades;
+		return contUnidades;
 	}
 
 	private void setContUnidades(int unidades) {
-		this.contunidades += unidades;
+		this.contUnidades += unidades;
 	}
 	
 	
