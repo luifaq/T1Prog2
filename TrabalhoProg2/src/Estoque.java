@@ -11,6 +11,7 @@ public class Estoque {
 		this.estoque = new Produto[50];
 		this.contProdutos = 0;
 	}
+	//Add um vetor de Produtos
 	public void addTipoProduto(Produto [] novos) {
 		for (int i = 0; i < novos.length; i++) {
 			addTipoProduto(novos[i]);
