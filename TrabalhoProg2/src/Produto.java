@@ -2,14 +2,14 @@ import java.util.Scanner;
 
 public class Produto {
 
-	protected  int cod;
+	protected  String cod;
 	protected String nome;
 	protected double preco;
 	protected String apelido;
 	protected int contunidades;//contador de unidades existentes do produto - Felipe
 	protected boolean perecivel;
 	
-	public Produto(int cod, String nome, double preco,boolean perecivel){
+	public Produto(String cod, String nome, double preco,boolean perecivel){
 		
 	    this.contunidades = 1;
 		this.cod = cod;
