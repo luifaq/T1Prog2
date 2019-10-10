@@ -1,4 +1,4 @@
-package Trabalho.org;
+import java.util.Scanner;
 
 public class Produto {
 
@@ -6,15 +6,74 @@ public class Produto {
 	protected String nome;
 	protected double preco;
 	protected String apelido;
-	protected int[] unidades;
+	protected int contunidades;//contador de unidades existentes do produto - Felipe
+	protected boolean perecivel;
 	
-	public Produto(int cod, String nome, double preco){
+	public Produto(int cod, String nome, double preco,boolean perecivel){
 		
-	    this.unidades = new int[30];
+	    this.contunidades = 1;
 		this.cod = cod;
 		this.nome = nome;
 		this.preco = preco;
+		this.perecivel = perecivel;
 		
+		
+	}
+//	cadastra um novo produto
+	public Produto cadastrarProduto() {
+		Scanner s1 = new Scanner(System.in);
+		String resposta;
+		System.out.println("Informe o nome do produto: ");
+		nome = s1.nextLine();
+		System.out.println("Informe o código do produto: ");
+		cod = s1.nextInt();
+		s1.nextLine();
+		System.out.println("Informe o preço do produto: ");
+		s1.hasNextDouble();
+		System.out.println("O produto é perecivel?");
+		resposta = s1.nextLine();
+		if(resposta.equalsIgnoreCase("sim"))
+			perecivel = true;
+		else
+			perecivel = false;
+		
+		s1.close();
+		
+		Produto novoProduto = new Produto(cod, resposta, preco, perecivel);
+		return novoProduto;
+	}
+	// Metodo para adicionar uma quatidade especifica passada por paramêtro - Felipe
+	public void addProduto(int qnt) {
+		if(this.contunidades < 30 && (this.contunidades + qnt)<=30) {
+			setContUnidades(qnt);
+		}else
+			System.out.println("Espaço insuficiente");
+	}
+	//Metodo que adiciona de uma unidade - Felipe
+	public void addProduto() {
+		if(this.contunidades < 30) {
+			this.contunidades++;
+		}
+	}
+	//Remove produtos por quantidade especifica - Felipe
+	public void removeProduto(int qnt) {
+		if( (this.contunidades - qnt)>=0) {
+			setContUnidades((this.contunidades - qnt));
+		}
+	}
+	//Decrementa produto de 1 em 1 - Felipe
+	public void removeProduto() {
+		if(this.contunidades > 0) {
+			this.contunidades--;
+		}
+		if(this.contunidades <= 1)
+			System.out.println("ALERTA - ESTOQUE ESCAÇO");
+	}
+	//Verifica se os produtos são iguais atraves do codigo e nome do produto - Felipe
+	public boolean equals(Produto a) {
+		if(a.cod == this.cod && a.nome.equalsIgnoreCase(this.nome)) {
+			return true;
+		}return false;
 	}
 
 	public int getCod() {
@@ -49,12 +108,12 @@ public class Produto {
 		this.apelido = apelido;
 	}
 
-	public int[] getUnidades() {
-		return unidades;
+	public int getContUnidades() {
+		return contunidades;
 	}
 
-	public void setUnidades(int[] unidades) {
-		this.unidades = unidades;
+	private void setContUnidades(int unidades) {
+		this.contunidades += unidades;
 	}
 	
 	
