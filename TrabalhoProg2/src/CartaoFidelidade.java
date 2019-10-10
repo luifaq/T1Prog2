@@ -1,4 +1,4 @@
 
-public interface CataoFidelidade {
-
+public interface CartaoFidelidade {
+	
 }
