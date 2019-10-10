@@ -14,7 +14,7 @@ public class Vendas {
 		this.vendedor = vendedor;
 		this.formaPagamento = formaPagamento;
 		this.tipoPagamento = tipoPagamento;
-		this.vendedor.realizaVenda();
+//		this.vendedor.realizaVenda();
 	}
 
 	public Produto[] getProdutos() {
