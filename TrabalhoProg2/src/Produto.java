@@ -9,9 +9,9 @@ public class Produto {
 	protected int contunidades;//contador de unidades existentes do produto - Felipe
 	protected boolean perecivel;
 	
-	public Produto(String cod, String nome, double preco,boolean perecivel){
+	public Produto(String cod, String nome, double preco,boolean perecivel,int qntProdutos){
 		
-	    this.contunidades = 1;
+	    this.contunidades = qntProdutos;
 		this.cod = cod;
 		this.nome = nome;
 		this.preco = preco;
@@ -19,29 +19,31 @@ public class Produto {
 		
 		
 	}
-//	cadastra um novo produto
-	public Produto cadastrarProduto() {
-		Scanner s1 = new Scanner(System.in);
-		String resposta;
-		System.out.println("Informe o nome do produto: ");
-		nome = s1.nextLine();
-		System.out.println("Informe o código do produto: ");
-		cod = s1.nextInt();
-		s1.nextLine();
-		System.out.println("Informe o preço do produto: ");
-		s1.hasNextDouble();
-		System.out.println("O produto é perecivel?");
-		resposta = s1.nextLine();
-		if(resposta.equalsIgnoreCase("sim"))
-			perecivel = true;
-		else
-			perecivel = false;
-		
-		s1.close();
-		
-		Produto novoProduto = new Produto(cod, resposta, preco, perecivel);
-		return novoProduto;
-	}
+////	cadastra um novo produto
+//	public Produto cadastrarProduto() {
+//		Scanner s1 = new Scanner(System.in);
+//		String resposta;
+//		System.out.println("Informe o nome do produto: ");
+//		nome = s1.nextLine();
+//		System.out.println("Informe o código do produto: ");
+//		cod = s1.nextInt();
+//		s1.nextLine();
+//		System.out.println("Informe o preço do produto: ");
+//		s1.hasNextDouble();
+//		System.out.println("O produto é perecivel?");
+//		resposta = s1.nextLine();
+//		if(resposta.equalsIgnoreCase("sim"))
+//			perecivel = true;
+//		else
+//			perecivel = false;
+//		
+//		s1.close();
+//		
+//		Produto novoProduto = new Produto(cod, resposta, preco, perecivel);
+//		return novoProduto;
+//	}
+	
+	
 	// Metodo para adicionar uma quatidade especifica passada por paramêtro - Felipe
 	public void addProduto(int qnt) {
 		if(this.contunidades < 30 && (this.contunidades + qnt)<=30) {
@@ -76,11 +78,11 @@ public class Produto {
 		}return false;
 	}
 
-	public int getCod() {
+	public String getCod() {
 		return this.cod;
 	}
 
-	public void setCod(int cod) {
+	public void setCod(String cod) {
 		this.cod = cod;
 	}
 

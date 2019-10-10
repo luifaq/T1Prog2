@@ -11,6 +11,12 @@ public class Estoque {
 		this.estoque = new Produto[50];
 		this.contProdutos = 0;
 	}
+	public void addTipoProduto(Produto [] novos) {
+		for (int i = 0; i < novos.length; i++) {
+			addTipoProduto(novos[i]);
+		}
+	}
+	
 	//Adiciona o Tipo do produto no estoque - Felipe
 	public boolean addTipoProduto(Produto produto) {
 		if(verificarEstoque(produto)!=-1 && this.contProdutos<50) {
