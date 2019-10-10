@@ -38,6 +38,7 @@ public class Produto {
 //			perecivel = false;
 //		
 //		s1.close();
+	//nao sei
 //		
 //		Produto novoProduto = new Produto(cod, resposta, preco, perecivel);
 //		return novoProduto;
