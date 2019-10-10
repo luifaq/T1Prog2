@@ -4,6 +4,7 @@ public class Padaria {
 
 	public static void main(String[] args) {
 		Funcionario func[] = new Funcionario[5];
+		Estoque estoque;
 		Endereco end[] = new Endereco[5];
 		Produto prod[] = new Produto[20];
 		Scanner sc1 = new Scanner(System.in);
@@ -39,6 +40,8 @@ public class Padaria {
 		prod[17] = new Produto("000018", "Coca Cola Lata 290 ml", 3.5, true, 5);
 		prod[18] = new Produto("000019", "Coca Cola 1L", 5, true, 5);
 		prod[19] = new Produto("000020", "Suco Dell Vale 1L", 8.5, true, 5);
+		
+		estoque = new Estoque(prod);
 		/*
 		 * do { System.out.println("-----Padaria Trem Bao-----");
 		 * System.out.println("Escolha a sua opção");

@@ -6,9 +6,10 @@ public class Estoque {
 	protected Produto[] estoque;
 	protected int contProdutos;
 	
-	public Estoque(Produto produto) {
+	public Estoque(Produto [] produto) {
 		
 		this.estoque = new Produto[50];
+		addTipoProduto(produto);
 		this.contProdutos = 0;
 	}
 	//Add um vetor de Produtos
