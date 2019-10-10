@@ -20,7 +20,7 @@ public class Produto {
 		
 	}
 	
-//	cadastra um novo produto
+//	cadastra um novo produto - Lui
 	public Produto cadastrarProduto() {
 		Scanner s1 = new Scanner(System.in);
 		String resposta;
