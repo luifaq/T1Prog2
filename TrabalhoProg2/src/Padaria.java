@@ -6,14 +6,17 @@ public class Padaria {
 		 Endereco  end [] = new Endereco[5];
 		 Produto prod[] = new Produto[20];
 		Scanner sc1 = new Scanner(System.in);
-		end[0]  = new Endereco("Machado Abrao", "21", "Sao Jose", "79214566", "Campo Grande");
-		
+		end[0]  = new Endereco("Rua Machado Abrao", "21", "São José", "79035789", "Campo Grande");
+		end[1]  = new Endereco("Rua Florentino de Jesus", "348", "São José", "79035180", "Campo Grande");
+		end[2]  = new Endereco("Rua Mangolia", "1238", "São José", "79035436", "Campo Grande");
+		end[3]  = new Endereco("Rua Ouro Negro", "753", "São José", "79035804", "Campo Grande");
+		end[4]  = new Endereco("Rua Miguel Tomé", "1375", "São José", "79035350", "Campo Grande");
 		
 		func[0] = new Padeiro("Larissa", "78966257", end[0], "91318961", 1500);
-		func[1]  = new Padeiro("Clovis","654822535",end[0],"99217854",1500);
-		func[2]  = new Gerente("Amanda","2145789312",end[0],"9874563",2500);
-		func[3]  = new Vendedor("Flavio","4158766981",end[0],"9935846",1000);
-		func[4]  = new Vendedor("Alberto","654822535",end[0],"99217854",1000);
+		func[1]  = new Padeiro("Clovis","654822535",end[1],"99217854",1500);
+		func[2]  = new Gerente("Amanda","2145789312",end[2],"9874563",2500);
+		func[3]  = new Vendedor("Flavio","4158766981",end[3],"9935846",1000);
+		func[4]  = new Vendedor("Alberto","654822535",end[4],"99217854",1000);
 		
 		prod[0] = new Produto("000001", "Pao", 0.5, true);
 		prod[1] = new Produto("000002", "Sonho", 2, true);
@@ -49,6 +52,7 @@ public class Padaria {
 		
 		
 
+		sc1.close();
 	}
 	
 	
