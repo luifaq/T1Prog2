@@ -1,5 +1,3 @@
-
-
 public class Vendas {
 
 	private Produto produtos[] = new Produto[20];
@@ -7,13 +5,15 @@ public class Vendas {
 	private Vendedor vendedor;
 	private int formaPagamento;
 	private boolean tipoPagamento;
+	private Cliente cliente;
 	
-	public Vendas(Produto[] produtos, String dataVenda, Vendedor vendedor, int formaPagamento, boolean tipoPagamento) {
+	public Vendas(Produto[] produtos, String dataVenda, Vendedor vendedor, int formaPagamento, boolean tipoPagamento,Cliente cliente) {
 		this.produtos = produtos;
 		this.dataVenda = dataVenda;
 		this.vendedor = vendedor;
 		this.formaPagamento = formaPagamento;
 		this.tipoPagamento = tipoPagamento;
+		this.cliente = cliente;
 //		this.vendedor.realizaVenda();
 	}
 

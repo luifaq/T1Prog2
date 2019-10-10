@@ -18,8 +18,8 @@ public abstract class Funcionario extends Pessoa{
 	}
 	
 	public void imprimeRelatorio() {
-		super.imprimeRelatório();
-		System.out.println("Salário:" + this.salario);
+		super.imprimeRelatorio();
+		System.out.println("Salário base:" + this.salario);
 	}
 	
 }

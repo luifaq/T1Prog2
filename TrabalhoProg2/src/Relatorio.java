@@ -1,4 +1,4 @@
 
 public interface Relatorio {
-	public abstract void imprimeRelatório();
+	public abstract void imprimeRelatorio();
 }

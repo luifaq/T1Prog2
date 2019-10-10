@@ -12,7 +12,7 @@ public abstract class Pessoa implements Relatorio {
 		this.telefone = telefone;
 	}
 	@Override
-	public void imprimeRelatório() {
+	public void imprimeRelatorio() {
 		System.out.println();
 		System.out.println("-------Relaótio-------");
 		System.out.println();

@@ -1,5 +1,3 @@
-
-
 public class Vendedor extends Funcionario{
 
 	  private Vendas[] vendas;
@@ -70,5 +68,11 @@ public class Vendedor extends Funcionario{
 		for (int i = 0; i < aux.length; i++)
 			aux[i] = vetor[i];
 		vetor = aux;
+	}
+	
+	public void imprimeRelatorio() {
+		super.imprimeRelatorio();
+		if(atingiuMeta())
+		System.out.println("Bonificação: "+ (super.getSalario()*0.10));
 	}
 }
