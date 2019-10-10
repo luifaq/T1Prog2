@@ -12,7 +12,14 @@ public class Vendedor extends Funcionario{
 //		this.setVendas(0);
 	}
 
-
+//	verifica se o vendedor atingiu sua meta de vendas
+	public boolean atingiuMeta() {
+		if(valorTotalVendas(vendas) >= meta)
+			return true;
+		return false;
+	}
+	
+//	adiciona uma venda ao vendedor	
 	public void addVendas(Vendas novaVenda) {
 		if(isFull(vendas))
 			redimensionaVetor(vendas);
@@ -21,7 +28,7 @@ public class Vendedor extends Funcionario{
 				vendas[i] = novaVenda;
 	}
 
-
+//	calcula o total das vendas do vendedor
 	public double valorTotalVendas(Vendas[] vendas) {
 		double valorTotalVendas = 0;
 		for (int i = 0; i < vendas.length; i++) {
@@ -50,14 +57,14 @@ public class Vendedor extends Funcionario{
 	public void setMeta(int meta) {
 		this.meta = meta;
 	}
-	
+//	verifica se o vetor está cheio	
 	public boolean isFull(Vendas[] vetor) {
 		for (int i = 0; i < vetor.length; i++) 
 			if(vetor[i] == null)
 				return false;
 		return true;
 	}
-	
+//	redimensiona o vetor	
 	public void redimensionaVetor(Vendas[] vetor) {
 		Vendas[] aux = new Vendas[vetor.length + 1];
 		for (int i = 0; i < aux.length; i++)
