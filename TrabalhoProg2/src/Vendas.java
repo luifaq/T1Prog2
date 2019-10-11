@@ -6,6 +6,7 @@ public class Vendas {
 	private int formaPagamento;
 	private boolean tipoPagamento;
 	private Cliente cliente;
+	private Estoque estoque;
 	
 	public Vendas(Produto[] produtos, String dataVenda, Vendedor vendedor, int formaPagamento, boolean tipoPagamento,Cliente cliente) {
 		this.produtos = produtos;
@@ -16,6 +17,24 @@ public class Vendas {
 		this.cliente = cliente;
 //		this.vendedor.realizaVenda();
 	}
+	
+	public boolean realizarVenda(int qnt, Produto produto) {
+
+        for(int i = 0; i < estoque.estoque.length; i++) {
+
+            if(estoque.estoque[i] == produto) {
+
+                if(produto.getContUnidades() >= qnt) {
+
+                    produto.removeProduto(qnt);
+
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
 
 	public Produto[] getProdutos() {
 		return produtos;

@@ -18,7 +18,7 @@ public class TremBaum {
 				break;
 			case 2:
 				//System.out.println("Cadastrar Cliente");
-				
+				 loja.cadastrarCliente();
 				break;
 			case 3:
 				//System.out.println("Cadastrar Produto");

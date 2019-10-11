@@ -1,11 +1,11 @@
 
 public abstract class Pessoa implements Relatorio {
 	private String nome;
-	private Endereco endereco;
+	private String endereco;
 	private String cpf;
 	private String telefone;
 	
-	public Pessoa(String nome, Endereco endereco, String cpf, String telefone) {
+	public Pessoa(String nome, String endereco, String cpf, String telefone) {
 		this.nome = nome;
 		this.endereco = endereco;
 		this.cpf = cpf;
@@ -28,10 +28,10 @@ public abstract class Pessoa implements Relatorio {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Endereco getEndereco() {
+	public String getEndereco() {
 		return endereco;
 	}
-	public void setEndereco(Endereco endereco) {
+	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
 	public String getCpf() {

@@ -3,7 +3,7 @@ public final class Cliente extends Pessoa implements CartaoFidelidade {
 
 	private double valorCompras;
 
-	public Cliente(String nome, Endereco endereco, String cpf, String telefone) {
+	public Cliente(String nome, String endereco, String cpf, String telefone) {
 		super(nome, endereco, cpf, telefone);
 
 	}

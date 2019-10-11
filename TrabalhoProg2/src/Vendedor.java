@@ -4,7 +4,7 @@ public class Vendedor extends Funcionario{
 	  private double meta;
 	  
 	
-	public Vendedor(String nome, String cpf, Endereco endereco, String telefone, double salario) {
+	public Vendedor(String nome, String cpf, String endereco, String telefone, double salario) {
 		super(nome, cpf, endereco, telefone, salario);
 		
 //		this.setVendas(0);
