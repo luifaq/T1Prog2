@@ -1,19 +1,20 @@
-import java.util.Scanner;
-
 public class Padaria {
-
-	public static void main(String[] args) {
-		Funcionario func[] = new Funcionario[5];
+	{
+		Cliente[] cadastrados = new Cliente[2];
+		Funcionario [] func = new Funcionario[5];
 		Estoque estoque;
-		Endereco end[] = new Endereco[5];
-		Produto prod[] = new Produto[20];
-		Scanner sc1 = new Scanner(System.in);
+		Endereco [] end = new Endereco[5];
+		Produto [] prod = new Produto[20];
+				
 		end[0] = new Endereco("Rua Machado Abrao", "21", "São José", "79035789", "Campo Grande");
 		end[1] = new Endereco("Rua Florentino de Jesus", "348", "São José", "79035180", "Campo Grande");
 		end[2] = new Endereco("Rua Mangolia", "1238", "São José", "79035436", "Campo Grande");
 		end[3] = new Endereco("Rua Ouro Negro", "753", "São José", "79035804", "Campo Grande");
 		end[4] = new Endereco("Rua Miguel Tomé", "1375", "São José", "79035350", "Campo Grande");
 
+		cadastrados[0] = new Cliente("Ana", end[2], "564984165165", "941646345");
+		cadastrados[0] = new Cliente("Boruto", end[1], "89494656165", "844115345");
+		
 		func[0] = new Padeiro("Larissa", "78966257", end[0], "91318961", 1500);
 		func[1] = new Padeiro("Clovis", "654822535", end[1], "99217854", 1500);
 		func[2] = new Gerente("Amanda", "2145789312", end[2], "9874563", 2500);
@@ -40,21 +41,8 @@ public class Padaria {
 		prod[17] = new Produto("000018", "Coca Cola Lata 290 ml", 3.5, true, 5);
 		prod[18] = new Produto("000019", "Coca Cola 1L", 5, true, 5);
 		prod[19] = new Produto("000020", "Suco Dell Vale 1L", 8.5, true, 5);
-		
+
 		estoque = new Estoque(prod);
-		/*
-		 * do { System.out.println("-----Padaria Trem Bao-----");
-		 * System.out.println("Escolha a sua opção");
-		 * System.out.println("Iniciar uma compra - Digite 1");
-		 * System.out.println("Finalizar  uma compra - Digite 2");
-		 * System.out.println("Realizar uma compra - Digite 3"); switch() {
-		 * 
-		 * }
-		 * 
-		 * }while(resposta.equalsIgnoreCase("sim"));
-		 */
 
-		sc1.close();
 	}
-
 }
