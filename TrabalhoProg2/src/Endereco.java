@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 
 public class Endereco {
 
@@ -11,6 +11,24 @@ public class Endereco {
 		this.bairro = bairro;
 		this.cep = cep;
 		this.cidade = cidade;
+	}
+	
+	public Endereco cadastrarEndereco() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Nome da rua");
+		String rua = sc.nextLine(); 
+		System.out.println("Numero ");
+		String numero = sc.nextLine();
+		System.out.println("Bairro");
+		String bairro = sc.nextLine();
+		System.out.println("CEP");
+		String cep = sc.nextLine();
+		System.out.println("Cidade");
+		String cidade = sc.nextLine();
+		
+		Endereco novo = new Endereco(rua,numero,bairro,cep,cidade);
+		return novo;
 	}
 
 	public String getRua() {

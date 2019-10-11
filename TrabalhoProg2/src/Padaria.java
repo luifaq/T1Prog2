@@ -69,7 +69,7 @@ public class Padaria {
 		
 		
 //cadastra um novo produto
-		public Produto cadastrarProduto() {
+		public void cadastrarProduto() {
 				Scanner s1 = new Scanner(System.in);
 				boolean perecivel;
 				String resposta;
@@ -91,7 +91,25 @@ public class Padaria {
 			
 				
 				Produto novoProduto = new Produto(cod, resposta, preco, perecivel,1);
-				return novoProduto;
+				
+				estoque.addTipoProduto(novoProduto);
 			}
+		public void cadastrarCliente() {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Informe o nome:");
+			String nome = sc.nextLine();
+			
+			
+		}
+		
+		public void imprimeMenu() {
+			System.out.println("----- Padaria Trem Baum -----");
+			System.out.println("--- Escolha uma opção ---");
+			System.out.println("1 - Realizar vendas");
+			System.out.println("2 - Cadastrar Cliente");
+			System.out.println("3 - Cadastrar Produto");
+			System.out.println("4 - Cadastrar Funcionário");
+
+		}
 		
 }
