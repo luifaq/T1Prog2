@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Padaria {
 	
 		Cliente[] cadastrados = new Cliente[2];
@@ -5,7 +7,7 @@ public class Padaria {
 		Estoque estoque;
 		Endereco [] end = new Endereco[5];
 		Produto [] prod = new Produto[20];
-		
+		Scanner s1 = new Scanner(System.in);
 		public Padaria() {
 			
 		
@@ -49,6 +51,32 @@ public class Padaria {
 		estoque = new Estoque(prod);
 
 	}
+		
+		public Endereco cadastrarEndereco() {
+			String rua, numero, bairro, cep, cidade;
+			Endereco novoEndereco;
+			
+			System.out.println("Informe a rua: ");
+			rua = s1.nextLine();
+			System.out.println("Informe o número: ");
+			numero = s1.nextLine();
+			System.out.println("Informe o bairro: ");
+			bairro = s1.nextLine();
+			System.out.println("Informe o cep: ");
+			cep = s1.nextLine();
+			System.out.println("Informe a cidade: ");
+			cidade = s1.nextLine();
+			
+			novoEndereco = new Endereco(rua, numero, bairro, cep, cidade);
+			
+			return novoEndereco;
+		}
+		
+		public boolean cadastrarCliente() {
+			
+			
+			return false;
+		}
 		
 //		verifica se o vetor está cheio	
 		public boolean isFull(Vendas[] vetor) {
