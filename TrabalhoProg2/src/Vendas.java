@@ -72,7 +72,7 @@ public class Vendas {
 			precoTotal += precoTotal * 0.02;
 			
 		}
-		
+		cliente.setValorCompras(precoTotal);
 		return precoTotal;
 	}
 	

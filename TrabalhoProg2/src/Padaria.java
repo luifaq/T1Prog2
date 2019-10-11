@@ -1,10 +1,14 @@
 public class Padaria {
-	{
+	
 		Cliente[] cadastrados = new Cliente[2];
 		Funcionario [] func = new Funcionario[5];
 		Estoque estoque;
 		Endereco [] end = new Endereco[5];
 		Produto [] prod = new Produto[20];
+		
+		public Padaria() {
+			
+		
 				
 		end[0] = new Endereco("Rua Machado Abrao", "21", "São José", "79035789", "Campo Grande");
 		end[1] = new Endereco("Rua Florentino de Jesus", "348", "São José", "79035180", "Campo Grande");
@@ -12,8 +16,8 @@ public class Padaria {
 		end[3] = new Endereco("Rua Ouro Negro", "753", "São José", "79035804", "Campo Grande");
 		end[4] = new Endereco("Rua Miguel Tomé", "1375", "São José", "79035350", "Campo Grande");
 
-		cadastrados[0] = new Cliente("Ana", end[2], "564984165165", "941646345");
-		cadastrados[0] = new Cliente("Boruto", end[1], "89494656165", "844115345");
+		cadastrados[0] = new Cliente("Ana", end[2], "564984165165", "991646345");
+		cadastrados[0] = new Cliente("Boruto", end[1], "89494656165", "984115345");
 		
 		func[0] = new Padeiro("Larissa", "78966257", end[0], "91318961", 1500);
 		func[1] = new Padeiro("Clovis", "654822535", end[1], "99217854", 1500);
@@ -45,4 +49,19 @@ public class Padaria {
 		estoque = new Estoque(prod);
 
 	}
+		
+//		verifica se o vetor está cheio	
+		public boolean isFull(Vendas[] vetor) {
+			for (int i = 0; i < vetor.length; i++) 
+				if(vetor[i] == null)
+					return false;
+			return true;
+		}
+//		redimensiona o vetor	
+		public void redimensionaVetor(Vendas[] vetor) {
+			Vendas[] aux = new Vendas[vetor.length + 1];
+			for (int i = 0; i < aux.length; i++)
+				aux[i] = vetor[i];
+			vetor = aux;
+		}
 }
