@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Padaria {
 	
 		Cliente[] cadastrados = new Cliente[2];
@@ -64,4 +66,32 @@ public class Padaria {
 				aux[i] = vetor[i];
 			vetor = aux;
 		}
+		
+		
+//cadastra um novo produto
+		public Produto cadastrarProduto() {
+				Scanner s1 = new Scanner(System.in);
+				boolean perecivel;
+				String resposta;
+				System.out.println("Informe o nome do produto: ");
+				String nome = s1.nextLine();
+				System.out.println("Informe o código do produto: ");
+				String cod = s1.nextLine();
+				s1.nextLine();
+				System.out.println("Informe o preço do produto: ");
+				double preco = s1.nextDouble();
+				System.out.println("O produto é perecivel?");
+				resposta = s1.nextLine();
+				if(resposta.equalsIgnoreCase("sim"))
+					perecivel = true;
+				else
+					 perecivel = false;
+				
+				s1.close();
+			
+				
+				Produto novoProduto = new Produto(cod, resposta, preco, perecivel,1);
+				return novoProduto;
+			}
+		
 }
