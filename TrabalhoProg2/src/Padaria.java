@@ -5,27 +5,22 @@ public class Padaria {
 		Cliente[] cadastrados = new Cliente[2];
 		Funcionario [] func = new Funcionario[5];
 		Estoque estoque;
-		Endereco [] end = new Endereco[5];
 		Produto [] prod = new Produto[20];
 		Scanner s1 = new Scanner(System.in);
 		public Padaria() {
 			
 		
 				
-		end[0] = new Endereco("Rua Machado Abrao", "21", "São José", "79035789", "Campo Grande");
-		end[1] = new Endereco("Rua Florentino de Jesus", "348", "São José", "79035180", "Campo Grande");
-		end[2] = new Endereco("Rua Mangolia", "1238", "São José", "79035436", "Campo Grande");
-		end[3] = new Endereco("Rua Ouro Negro", "753", "São José", "79035804", "Campo Grande");
-		end[4] = new Endereco("Rua Miguel Tomé", "1375", "São José", "79035350", "Campo Grande");
-
-		cadastrados[0] = new Cliente("Ana", end[2], "564984165165", "991646345");
-		cadastrados[0] = new Cliente("Boruto", end[1], "89494656165", "984115345");
 		
-		func[0] = new Padeiro("Larissa", "78966257", end[0], "91318961", 1500);
-		func[1] = new Padeiro("Clovis", "654822535", end[1], "99217854", 1500);
-		func[2] = new Gerente("Amanda", "2145789312", end[2], "9874563", 2500);
-		func[3] = new Vendedor("Flavio", "4158766981", end[3], "9935846", 1000);
-		func[4] = new Vendedor("Alberto", "654822535", end[4], "99217854", 1000);
+
+		cadastrados[0] = new Cliente("Ana", "Rua Machado Abrao, 21", "564984165165", "991646345");
+		cadastrados[0] = new Cliente("Boruto", "Rua Florentino de Jesus, 348", "89494656165", "984115345");
+		
+		func[0] = new Padeiro("Larissa", "78966257", "Rua Machado Abrao, 21", "91318961", 1500);
+		func[1] = new Padeiro("Clovis", "654822535", "Rua Florentino de Jesus, 348", "99217854", 1500);
+		func[2] = new Gerente("Amanda", "2145789312", "Rua mangolia, 1238", "9874563", 2500);
+		func[3] = new Vendedor("Flavio", "4158766981", "Rua Ouro Negro, 753", "9935846", 1000);
+		func[4] = new Vendedor("Alberto", "654822535", "Rua Miguel Tomé, 1375", "99217854", 1000);
 
 		prod[0] = new Produto("000001", "Pao", 0.5, true, 30);
 		prod[1] = new Produto("000002", "Sonho", 2, true, 5);
@@ -52,42 +47,43 @@ public class Padaria {
 
 	}
 		
-		public Endereco cadastrarEndereco() {
-			String rua, numero, bairro, cep, cidade;
-			Endereco novoEndereco;
-			
-			System.out.println("Informe a rua: ");
-			rua = s1.nextLine();
-			System.out.println("Informe o número: ");
-			numero = s1.nextLine();
-			System.out.println("Informe o bairro: ");
-			bairro = s1.nextLine();
-			System.out.println("Informe o cep: ");
-			cep = s1.nextLine();
-			System.out.println("Informe a cidade: ");
-			cidade = s1.nextLine();
-			
-			novoEndereco = new Endereco(rua, numero, bairro, cep, cidade);
-			
-			return novoEndereco;
-		}
-		
 		public boolean cadastrarCliente() {
+			String nome, endereco, telefone, cpf;
+			Cliente novoCliente;
 			
+			System.out.println("Informe o nome do cliente: ");
+			nome = s1.nextLine();
+			System.out.println("Informe o endereço do cliente: ");
+			endereco = s1.nextLine();
+			System.out.println("Informe o cpf do cliente: ");
+			cpf = s1.nextLine();
+			System.out.println("Informe o telefone do cliente: ");
+			telefone = s1.nextLine();
+			
+			novoCliente = new Cliente(nome, endereco, cpf, telefone);
+			
+			if(isFull(cadastrados) == true)
+				redimensionaVetor(cadastrados);
+			for (int i = 0; i < cadastrados.length; i++) {
+				if(cadastrados[i] == null) {
+					cadastrados[i] = novoCliente;
+					return true;
+				}
+			}
 			
 			return false;
 		}
 		
 //		verifica se o vetor está cheio	
-		public boolean isFull(Vendas[] vetor) {
+		public boolean isFull(Object[] vetor) {
 			for (int i = 0; i < vetor.length; i++) 
 				if(vetor[i] == null)
 					return false;
 			return true;
 		}
 //		redimensiona o vetor	
-		public void redimensionaVetor(Vendas[] vetor) {
-			Vendas[] aux = new Vendas[vetor.length + 1];
+		public void redimensionaVetor(Object[] vetor) {
+			Object[] aux = new Object[vetor.length + 1];
 			for (int i = 0; i < aux.length; i++)
 				aux[i] = vetor[i];
 			vetor = aux;
